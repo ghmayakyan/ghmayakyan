@@ -14,6 +14,12 @@
 		A3B6D7F328CB43D100230EFB /* wdtDndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6D7F228CB43D100230EFB /* wdtDndTests.swift */; };
 		A3B6D7FD28CB43D100230EFB /* wdtDndUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6D7FC28CB43D100230EFB /* wdtDndUITests.swift */; };
 		A3B6D7FF28CB43D100230EFB /* wdtDndUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6D7FE28CB43D100230EFB /* wdtDndUITestsLaunchTests.swift */; };
+		A3B6D81328CB447700230EFB /* libwdt.1.32.1000.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B6D80D28CB442800230EFB /* libwdt.1.32.1000.dylib */; };
+		A3B6D81428CB447700230EFB /* libwdt.1.32.1000.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A3B6D80D28CB442800230EFB /* libwdt.1.32.1000.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A3B6D81728CB447700230EFB /* libwdt_min.1.32.1000.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B6D81628CB447700230EFB /* libwdt_min.1.32.1000.dylib */; };
+		A3B6D81828CB447700230EFB /* libwdt_min.1.32.1000.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A3B6D81628CB447700230EFB /* libwdt_min.1.32.1000.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A3B6D81E28CB44D900230EFB /* wdtWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3B6D81B28CB44D900230EFB /* wdtWrapper.cpp */; };
+		A3B6D81F28CB44D900230EFB /* wdtWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6D81D28CB44D900230EFB /* wdtWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +39,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A3B6D81528CB447700230EFB /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A3B6D81828CB447700230EFB /* libwdt_min.1.32.1000.dylib in Embed Libraries */,
+				A3B6D81428CB447700230EFB /* libwdt.1.32.1000.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A3B6D7DD28CB43D000230EFB /* wdtDnd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wdtDnd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6D7E028CB43D000230EFB /* wdtDndApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wdtDndApp.swift; sourceTree = "<group>"; };
@@ -45,6 +66,12 @@
 		A3B6D7F828CB43D100230EFB /* wdtDndUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wdtDndUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6D7FC28CB43D100230EFB /* wdtDndUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wdtDndUITests.swift; sourceTree = "<group>"; };
 		A3B6D7FE28CB43D100230EFB /* wdtDndUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wdtDndUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A3B6D80D28CB442800230EFB /* libwdt.1.32.1000.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libwdt.1.32.1000.dylib; sourceTree = "<group>"; };
+		A3B6D81628CB447700230EFB /* libwdt_min.1.32.1000.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libwdt_min.1.32.1000.dylib; sourceTree = "<group>"; };
+		A3B6D81928CB44D900230EFB /* wdtDnd-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wdtDnd-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3B6D81B28CB44D900230EFB /* wdtWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wdtWrapper.cpp; sourceTree = "<group>"; };
+		A3B6D81C28CB44D900230EFB /* wdtWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = wdtWrapper.hpp; sourceTree = "<group>"; };
+		A3B6D81D28CB44D900230EFB /* wdtWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wdtWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B6D81728CB447700230EFB /* libwdt_min.1.32.1000.dylib in Frameworks */,
+				A3B6D81328CB447700230EFB /* libwdt.1.32.1000.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +104,15 @@
 		A3B6D7D428CB43D000230EFB = {
 			isa = PBXGroup;
 			children = (
+				A3B6D81B28CB44D900230EFB /* wdtWrapper.cpp */,
+				A3B6D81C28CB44D900230EFB /* wdtWrapper.hpp */,
+				A3B6D81D28CB44D900230EFB /* wdtWrapper.swift */,
 				A3B6D7DF28CB43D000230EFB /* wdtDnd */,
 				A3B6D7F128CB43D100230EFB /* wdtDndTests */,
 				A3B6D7FB28CB43D100230EFB /* wdtDndUITests */,
 				A3B6D7DE28CB43D000230EFB /* Products */,
+				A3B6D80B28CB442800230EFB /* Frameworks */,
+				A3B6D81928CB44D900230EFB /* wdtDnd-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +163,15 @@
 			path = wdtDndUITests;
 			sourceTree = "<group>";
 		};
+		A3B6D80B28CB442800230EFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3B6D81628CB447700230EFB /* libwdt_min.1.32.1000.dylib */,
+				A3B6D80D28CB442800230EFB /* libwdt.1.32.1000.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +182,7 @@
 				A3B6D7D928CB43D000230EFB /* Sources */,
 				A3B6D7DA28CB43D000230EFB /* Frameworks */,
 				A3B6D7DB28CB43D000230EFB /* Resources */,
+				A3B6D81528CB447700230EFB /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -197,6 +241,7 @@
 				TargetAttributes = {
 					A3B6D7DC28CB43D000230EFB = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 					A3B6D7ED28CB43D100230EFB = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -259,8 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B6D81E28CB44D900230EFB /* wdtWrapper.cpp in Sources */,
 				A3B6D7E328CB43D000230EFB /* ContentView.swift in Sources */,
 				A3B6D7E128CB43D000230EFB /* wdtDndApp.swift in Sources */,
+				A3B6D81F28CB44D900230EFB /* wdtWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,22 +462,38 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wdtDnd/wdtDnd.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"wdtDnd/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wdtDnd",
+					/opt/homebrew/Cellar/boost/1.79.0_1/include,
+					/usr/local/include,
+					"/opt/homebrew/Cellar/openssl@1.1/1.1.1q/include",
+					/opt/homebrew/Cellar/fmt/9.1.0/include,
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wdt.wdtDnd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "wdtDnd-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -440,22 +503,37 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wdtDnd/wdtDnd.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"wdtDnd/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/wdtDnd",
+					/opt/homebrew/Cellar/boost/1.79.0_1/include,
+					/usr/local/include,
+					"/opt/homebrew/Cellar/openssl@1.1/1.1.1q/include",
+					/opt/homebrew/Cellar/fmt/9.1.0/include,
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wdt.wdtDnd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "wdtDnd-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
