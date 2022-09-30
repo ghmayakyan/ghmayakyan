@@ -8,6 +8,8 @@ struct ContentView: View {
     @State private var startStr = ""
     @State private var endStr = ""
     @State private var statusCode = 0
+    @State var timeStart: Date = Date()
+    @State var timeEnd: Date = Date()
     var body: some View {
         TextField("URL:", text:$txt).padding();
         Button("Choose File to Upload") {
@@ -24,7 +26,8 @@ struct ContentView: View {
                 let result = dialog.url // Pathname of the file
                 if (result != nil) {
                     status = "Uploading..."
-                    let today = Date.now
+                    let today = Date()
+                    timeStart = today
                     let fmt = DateFormatter()
                     fmt.timeStyle = .medium
                     startStr = fmt.string(from: today)
@@ -43,19 +46,21 @@ struct ContentView: View {
                 return
             }
             
-            DispatchQueue.global().async {
+            DispatchQueue.global(qos: .background).async {
                 if(path != "" && txt != "") {
                     statusCode = initializeWdtCSwift(url: txt, dir: path)
+                    let today = Date()
+                    self.timeEnd = today
+                    let timeDifferance = timeEnd.timeIntervalSince1970 - timeStart.timeIntervalSince1970
                     if (0 == statusCode) {
-                        let today = Date.now
                         let fmt = DateFormatter()
                         fmt.timeStyle = .medium
                         endStr = fmt.string(from: today)
                         value = 100
-                        status = "Completed." + startStr + " - " + endStr
+                        status = "Completed." + startStr + " - " + endStr + " : Total Time: \(timeDifferance)"
                     } else {
                         value = 5
-                        status = "Error. " + startStr + " - " + endStr
+                        status = "Error. " + startStr + " - " + endStr + " : Total Time: \(timeDifferance)"
                         statusCode = -1;
                     }
                 }
@@ -69,8 +74,6 @@ struct ContentView: View {
             }
         }
     
-        
-        
         ProgressView(status, value: value, total: 100.0).padding()
     }
 }
