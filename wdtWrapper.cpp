@@ -29,7 +29,7 @@ int initializeWdt(const char* url, const char *dir) {
     std::make_unique<facebook::wdt::WdtTransferRequest>(url);
     reqPtr->directory = dir;
     facebook::wdt::WdtTransferRequest &req = *reqPtr;
-    int retCode = wdt.wdtSend(req, ptr);
+    int retCode = wdt.wdtSend(req, &ptr);
     return retCode;
 }
 
@@ -37,8 +37,8 @@ double getProgress() {
     if(NULL != ptr) {
         std::unique_ptr<facebook::wdt::TransferReport> transfer = (*ptr)->getTransferReport();
         long total = transfer->getTotalFileSize();
-        long current = transfer->getPreviouslySentBytes();
-        double progress = (double)current/(double)total * 100;
+        long current = transfer->getSummary().getEffectiveDataBytes();
+        double progress = (double)current * 100.0/(double)total;
         return progress;
     }
     return -1.0;

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var txt: String = "wdt://ec2-54-172-211-61.compute-1.amazonaws.com:30000?Enc=2:dbca562efd3eb37e90bee69d38040747&id=1612404778&iv_change_int=34359738368&num_ports=8&recpv=32&tls=0"
+    @State private var txt: String = "wdt://3.87.67.192:30000?id=901780337&iv_change_int=34359738368&num_ports=8&recpv=32&tls=0"
     @State private var value: Double = 0
     @State private var status: String = "Uploading"
     @State private var path: String = ""
@@ -61,9 +61,10 @@ struct ContentView: View {
                 }
             }
             DispatchQueue.global().async {
+                usleep(5000000)
                 while(statusCode == 0) {
-                    usleep(5000000)
                     value = getProgressCSwift()
+                    //print(" ------------------ - ----------------- \(value)" )
                 }
             }
         }
